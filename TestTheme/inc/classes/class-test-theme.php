@@ -10,6 +10,7 @@ class TEST_THEME {
     protected function __construct(){
 
         Assets::get_instance();
+        Menus::get_instance();
 
         $this->setup_hooks();
     }
@@ -34,6 +35,16 @@ class TEST_THEME {
 				'flex-width'  => true,
 			]
 		);
+
+        add_theme_support( 'custom-background', [
+            'default-color' => '#fff',
+            'default-image' => '',
+            'default-repeat' => 'no-report',
+        ] );
+        
+        add_theme_support( 'post-thumbnails' );
+
+        add_theme_support( 'align-wide' );
     }
 }
 
